@@ -1,0 +1,215 @@
+---
+title: "intRo: Data visualisation with R"
+subtitle: "22 — R Basics"
+author: "Stefano Coretta"
+# institute: "RStudio, PBC"
+# date: "2016/12/12 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+???
+
+Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+
+---
+
+# R as a calculator
+
+Write the following in the `Console`, then press `ENTER`.
+
+```{r}
+1 + 2
+```
+
+--
+
+You did it! You run your first line of code!
+
+---
+
+# R as a calculator
+
+Try some more operations...
+
+```{r}
+67 - 13
+
+2 * 4
+
+268 / 43
+
+```
+
+---
+
+# R as a calculator
+
+You can chain operations...
+
+```{r}
+6 + 4 - 1 + 2
+
+4 * 2 + 3 * 2
+```
+
+---
+
+# R as a calculator
+
+But watch out for your brackets!
+
+```{r}
+4 * 2 + 3 * 2
+
+(4 * 2) + (3 * 2)
+
+4 * (2 + 3) * 2
+```
+
+---
+
+# Forget-me-not: variables
+
+Store a variable in the computer memory for later use.
+
+```{r}
+my_num <- 156
+```
+
+--
+
+You can just call it back when you need it!
+
+```{r}
+my_num
+```
+
+---
+
+# Oh my vars!
+
+```{r}
+income <- 1200
+
+expenses <- 500
+
+income - expenses
+```
+
+--
+
+You can go all the way with variables!
+
+```{r}
+savings <- income - expenses
+```
+
+And check the value...
+
+```{r}
+savings
+```
+
+---
+
+# Variables are... variable
+
+```{r}
+yo <- 5
+
+yo + 3
+
+yo <- 3
+
+yo + 3
+```
+
+---
+
+# Variables can hold more than one item
+
+```{r}
+one_i <- 6
+
+two_i <- c(6, 8)
+
+five_i <- c(6, 8, 42)
+```
+
+--
+
+Note the following are the same:
+
+```{r}
+one_i <- 6
+
+one_ii <- c(6)
+```
+
+
+---
+
+# R can't function without... functions
+
+**Functions** are operations performed on one or more *arguments*.
+
+```{r}
+sum(3, 5)
+```
+
+--
+
+And arguments can be vectors!
+
+```{r}
+my_nums <- c(3, 5, 7)
+
+sum(my_nums)
+```
+
+---
+
+# Not just numbers
+
+Variables can store **strings**.
+
+```{r}
+name <- "Stefano"
+surname <- "Coretta"
+
+name
+```
+
+---
+
+
+
+```{r}
+cat("My name is", name, surname)
+```
+
+--
+
+And you can reuse the same variable name to override the variable value.
+
+```{r}
+name <- "Raj"
+
+cat("My name is", name)
+```
+
+
+---
+
