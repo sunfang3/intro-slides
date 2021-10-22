@@ -1,0 +1,33 @@
+---
+title: "intRo: Data visualisation with R"
+subtitle: "03 — Plot with ggplot2"
+author: "Stefano Coretta"
+# institute: "RStudio, PBC"
+# date: "2016/12/12 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+???
+
+Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+
+---
+
+# Packages to the rescue
+
+```{r}
+library(tidyverse)
+```
+

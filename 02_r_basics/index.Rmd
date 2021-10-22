@@ -1,6 +1,6 @@
 ---
 title: "intRo: Data visualisation with R"
-subtitle: "22 — R Basics"
+subtitle: "02 — R Basics"
 author: "Stefano Coretta"
 # institute: "RStudio, PBC"
 # date: "2016/12/12 (updated: `r Sys.Date()`)"
@@ -177,6 +177,7 @@ And arguments can be vectors!
 my_nums <- c(3, 5, 7)
 
 sum(my_nums)
+mean(my_nums)
 ```
 
 ---
@@ -194,7 +195,9 @@ name
 
 ---
 
+# Not just numbers
 
+And strings can be used as arguments in functions.
 
 ```{r}
 cat("My name is", name, surname)
@@ -202,7 +205,7 @@ cat("My name is", name, surname)
 
 --
 
-And you can reuse the same variable name to override the variable value.
+And you can of course reuse the same variable name to override the variable value.
 
 ```{r}
 name <- "Raj"
@@ -212,4 +215,21 @@ cat("My name is", name)
 
 
 ---
+
+# Summary
+
+
+- R as a calculator
+
+  - Arithmetic operations.
+
+- Variable:
+  
+  - Numeric.
+  - String.
+
+- Function:
+  
+  - Function name (`sum()`, `mean()`, `cat()`.
+  - Arguments.
 
