@@ -29,6 +29,67 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
 
 ---
 
+# Visualise data
+
+
+---
+
+# Graphic systems
+
+- Base R.
+
+- lattice.
+
+- ggplot2 (the Grammar of Graphics).
+
+---
+
+# Base R plotting function
+
+
+```r
+x &lt;- 1:10
+y &lt;- x^3
+
+plot(x, y)
+```
+
+![](index_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+---
+
+# Base R plotting function
+
+
+```r
+x &lt;- seq(1, 10, by = 0.01)
+y &lt;- x^3
+
+plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
+```
+
+![](index_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+---
+
+# Packages to the rescue
+
+- The library.
+
+- Packages contained in library.
+
+- Base R (set of packages).
+
+- Install extra packages with `install.packages("tidyverse")`.
+
+---
+
+# Packages to the rescue
+
+To use a package installed in the library, you `attach` the package with `library()`.
+
+---
+
 # Packages to the rescue
 
 
@@ -37,7 +98,7 @@ library(tidyverse)
 ```
 
 ```
-## ── Attaching packages ─────────────────────────────── tidyverse 1.3.1 ──
+## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
 ```
 
 ```
@@ -60,10 +121,55 @@ library(tidyverse)
 ```
 
 ```
-## ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 ```
+
+---
+
+# Do you sleep like a giraffe or a brown bat?
+
+
+```r
+ggplot(
+  data = msleep,
+  mapping = aes(x = sleep_total, y = sleep_rem)
+) +
+  geom_point()
+```
+
+```
+## Warning: Removed 22 rows containing missing values (geom_point).
+```
+
+![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+
+---
+
+# Do you sleep like a giraffe or a brown bat?
+
+
+
+```r
+ggplot(
+  data = msleep,
+  mapping = aes(x = sleep_total, y = sleep_rem, label = name)
+) +
+  geom_point() +
+  geom_label()
+```
+
+```
+## Warning: Removed 22 rows containing missing values (geom_point).
+```
+
+```
+## Warning: Removed 22 rows containing missing values (geom_label).
+```
+
+![](index_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

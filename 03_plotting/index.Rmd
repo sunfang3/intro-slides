@@ -25,9 +25,91 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
 
 ---
 
+# Visualise data
+
+
+---
+
+# Graphic systems
+
+- Base R.
+
+- lattice.
+
+- ggplot2 (the Grammar of Graphics).
+
+---
+
+# Base R plotting function
+
+```{r}
+x <- 1:10
+y <- x^3
+
+plot(x, y)
+```
+
+---
+
+# Base R plotting function
+
+```{r}
+x <- seq(1, 10, by = 0.01)
+y <- x^3
+
+plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
+```
+
+---
+
+# Packages to the rescue
+
+- The library.
+
+- Packages contained in library.
+
+- Base R (set of packages).
+
+- Install extra packages with `install.packages("tidyverse")`.
+
+---
+
+# Packages to the rescue
+
+To use a package installed in the library, you `attach` the package with `library()`.
+
+---
+
 # Packages to the rescue
 
 ```{r}
 library(tidyverse)
+```
+
+---
+
+# Do you sleep like a giraffe or a brown bat?
+
+```{r}
+ggplot(
+  data = msleep,
+  mapping = aes(x = sleep_total, y = sleep_rem)
+) +
+  geom_point()
+```
+
+
+---
+
+# Do you sleep like a giraffe or a brown bat?
+
+
+```{r}
+ggplot(
+  data = msleep,
+  mapping = aes(x = sleep_total, y = sleep_rem, label = name)
+) +
+  geom_point() +
+  geom_label()
 ```
 

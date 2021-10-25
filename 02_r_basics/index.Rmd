@@ -213,6 +213,18 @@ name <- "Raj"
 cat("My name is", name)
 ```
 
+---
+
+# The null and the infinite
+
+```{r}
+forgot <- NA
+
+nothing <- NULL
+
+everything <- Inf
+```
+
 
 ---
 
