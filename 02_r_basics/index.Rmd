@@ -242,6 +242,6 @@ everything <- Inf
 
 - Function:
   
-  - Function name (`sum()`, `mean()`, `cat()`.
+  - Function name (`sum()`, `mean()`, `cat()`).
   - Arguments.
 

@@ -17,6 +17,14 @@ background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharin
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+library(tidyverse)
+theme_set(theme_minimal())
+library(intRo)
+data("social")
+data("endangered")
+data("harry_potter")
+data("df_ratios")
+df_ratios <- drop_na(df_ratios, student_ratio)
 ```
 
 ???
@@ -113,3 +121,55 @@ ggplot(
   geom_label()
 ```
 
+---
+
+# Social media users 2008-2019
+
+```{r}
+social %>%
+  filter(platform %in% c("Facebook", "Twitter", "TikTok", "Instagram", "YouTube")) %>%
+  ggplot(aes(year, users, colour = platform)) +
+  geom_line() +
+  geom_point()
+```
+
+---
+
+# Language endangerment
+
+```{r}
+endangered %>%
+  ggplot(aes(degree)) +
+  geom_bar()
+```
+
+---
+
+# Hogwarts houses
+
+```{r}
+harry_potter %>%
+  ggplot(aes(house, fill = house)) +
+  geom_bar()
+```
+
+---
+
+# Student/teacher ratio
+
+```{r}
+world_avg <- df_ratios %>%
+  summarize(avg = mean(student_ratio, na.rm = T)) %>%
+  pull(avg)
+
+df_ratios %>%
+  mutate(region = fct_reorder(region, -student_ratio_region)) %>%
+  ggplot(aes(x = region, y = student_ratio, color = region)) +
+    geom_jitter(size = 2, alpha = 0.5, width = 0.2) +
+    coord_flip() +
+  labs(
+    y = "Student to teacher ratio",
+    x = element_blank()
+  ) +
+  theme(legend.position = "none")
+```

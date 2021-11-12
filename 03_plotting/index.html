@@ -97,35 +97,6 @@ To use a package installed in the library, you `attach` the package with `librar
 library(tidyverse)
 ```
 
-```
-## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-```
-
-```
-## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-## ✓ tibble  3.1.5     ✓ dplyr   1.0.7
-## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-## ✓ readr   2.0.2     ✓ forcats 0.5.1
-```
-
-```
-## Warning: package 'tibble' was built under R version 4.1.1
-```
-
-```
-## Warning: package 'tidyr' was built under R version 4.1.1
-```
-
-```
-## Warning: package 'readr' was built under R version 4.1.1
-```
-
-```
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
-```
-
 ---
 
 # Do you sleep like a giraffe or a brown bat?
@@ -171,6 +142,70 @@ ggplot(
 
 ![](index_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
 
+---
+
+# Social media users 2008-2019
+
+
+```r
+social %&gt;%
+  filter(platform %in% c("Facebook", "Twitter", "TikTok", "Instagram", "YouTube")) %&gt;%
+  ggplot(aes(year, users, colour = platform)) +
+  geom_line() +
+  geom_point()
+```
+
+![](index_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+---
+
+# Language endangerment
+
+
+```r
+endangered %&gt;%
+  ggplot(aes(degree)) +
+  geom_bar()
+```
+
+![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+
+---
+
+# Hogwarts houses
+
+
+```r
+harry_potter %&gt;%
+  ggplot(aes(house, fill = house)) +
+  geom_bar()
+```
+
+![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+---
+
+# Student/teacher ratio
+
+
+```r
+world_avg &lt;- df_ratios %&gt;%
+  summarize(avg = mean(student_ratio, na.rm = T)) %&gt;%
+  pull(avg)
+
+df_ratios %&gt;%
+  mutate(region = fct_reorder(region, -student_ratio_region)) %&gt;%
+  ggplot(aes(x = region, y = student_ratio, color = region)) +
+    geom_jitter(size = 2, alpha = 0.5, width = 0.2) +
+    coord_flip() +
+  labs(
+    y = "Student to teacher ratio",
+    x = element_blank()
+  ) +
+  theme(legend.position = "none")
+```
+
+![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
