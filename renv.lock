@@ -473,15 +473,15 @@
     },
     "intRo": {
       "Package": "intRo",
-      "Version": "1.0.0",
+      "Version": "1.0.5",
       "Source": "GitHub",
       "RemoteType": "github",
+      "RemoteHost": "api.github.com",
       "RemoteUsername": "intro-rstats",
       "RemoteRepo": "intRo",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "d958676f1b5f314e0eeb439684697209008d688c",
-      "RemoteHost": "api.github.com",
-      "Hash": "5f66f5a690a1a703f7f4307a44e82ad3"
+      "RemoteRef": "v1.0.5",
+      "RemoteSha": "410412dff50f120ac1f34506b6fe5d477b3c8288",
+      "Hash": "594595f75b8d378572f56ffbc4f4363c"
     },
     "isoband": {
       "Package": "isoband",
