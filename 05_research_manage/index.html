@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>intRo: Data visualisation with R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stefano Coretta" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="../ipa-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="../custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# intRo: Data visualisation with R
+## 05 — Research Data Management
+### Stefano Coretta
+
+---
+
+
+
+
+# RStudio
+
+.center[![:scale 85%](img/rstudio.png)]
+
+---
+
+# RStudio options
+
+.center[![:scale 60%](img/general-options.png)]
+
+---
+
+# RStudio projects
+
+RStudio **projects** are self-contained environments in which you keep code and data.
+
+.center[![:scale 70%](img/new-project.png)]
+
+---
+
+class: smaller-font
+
+# RStudio projects
+
+.pull-left[
+.f2[Advantages]
+
+
+- You can open and work on **multiple projects** at a time.
+
+- The files of each individual projects are easily accessible by using **relative paths**, so goodby to `setwd()` (for example `./data/results.csv` if your project has a file `results.csv` in the `data/` folder).
+
+- You can **isolate** package **dependencies** with `renv`.
+
+- It simplifies the **distribution** of your research (for example, as an R package).
+]
+
+--
+
+.pull-right[
+.f2[Disadvantages]
+
+- **None**!
+]
+
+---
+
+# Save code in scripts
+
+&lt;br&gt;
+
+- &lt;u&gt;R scripts&lt;/u&gt; are files with the extension `.R`.
+
+--
+
+- Be sure to write &lt;u&gt;standalone&lt;/u&gt; code (= code that runs from start to finish without errors).
+
+--
+
+- &lt;u&gt;Comment&lt;/u&gt; your code, for your future self and for others.
+
+--
+
+- Even better... use &lt;u&gt;Rmarkdown&lt;/u&gt; files!
+
+---
+
+# R Markdown
+
+**Dynamic report** writing in R with R Markdown.
+
+* &lt;http://rmarkdown.rstudio.com&gt;
+
+--
+
+* Text and code in a single document (`.Rmd`).
+
+--
+
+* Several output formats (`.html`, `.pdf`, `.docx`, ...).
+
+--
+
+* R Markdown templates for journal submissions: &lt;https://github.com/rstudio/rticles&gt;.
+
+--
+
+* You can also write books, presentations, websites and blogs.
+
+---
+
+# Organising folders and files
+
+From the [Open Science Framework](http://help.osf.io/m/bestpractices/l/611391-organizing-files).
+
+* Separate &lt;u&gt;data&lt;/u&gt; from &lt;u&gt;code/text&lt;/u&gt;.
+
+* Separate &lt;u&gt;raw data&lt;/u&gt; from &lt;u&gt;derived data&lt;/u&gt;.
+
+* Treat raw data as &lt;u&gt;read-only&lt;/u&gt;.
+
+* Use a &lt;u&gt;versioning system&lt;/u&gt; (like `git` with GitHub).
+
+---
+
+# Summary
+
+* Use **RStudio**.
+
+* **Don't save `.Rdata`** and do not load it at start up.
+
+* Separate **code** from **data** (*raw* and *derived*).
+
+* Write **dynamic reports** with R Markdown (and avoid copy-paste).
+
+---
+
+# Extra: Research compendia with R packages
+
+* &lt;https://github.com/ropensci/rrrpkg&gt;
+
+* &lt;https://www.r-bloggers.com/how-to-develop-good-r-packages-for-open-science/&gt;
+
+* &lt;http://r-pkgs.had.co.nz&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

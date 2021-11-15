@@ -1,0 +1,147 @@
+---
+title: "intRo: Data visualisation with R"
+subtitle: "05 — Research Data Management"
+author: "Stefano Coretta"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - ../ipa-fonts.css
+      - ../custom.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "../macros.js"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
+```
+
+# RStudio
+
+.center[![:scale 85%](img/rstudio.png)]
+
+---
+
+# RStudio options
+
+.center[![:scale 60%](img/general-options.png)]
+
+---
+
+# RStudio projects
+
+RStudio **projects** are self-contained environments in which you keep code and data.
+
+.center[![:scale 70%](img/new-project.png)]
+
+---
+
+class: smaller-font
+
+# RStudio projects
+
+.pull-left[
+.f2[Advantages]
+
+
+- You can open and work on **multiple projects** at a time.
+
+- The files of each individual projects are easily accessible by using **relative paths**, so goodby to `setwd()` (for example `./data/results.csv` if your project has a file `results.csv` in the `data/` folder).
+
+- You can **isolate** package **dependencies** with `renv`.
+
+- It simplifies the **distribution** of your research (for example, as an R package).
+]
+
+--
+
+.pull-right[
+.f2[Disadvantages]
+
+- **None**!
+]
+
+---
+
+# Save code in scripts
+
+<br>
+
+- <u>R scripts</u> are files with the extension `.R`.
+
+--
+
+- Be sure to write <u>standalone</u> code (= code that runs from start to finish without errors).
+
+--
+
+- <u>Comment</u> your code, for your future self and for others.
+
+--
+
+- Even better... use <u>Rmarkdown</u> files!
+
+---
+
+# R Markdown
+
+**Dynamic report** writing in R with R Markdown.
+
+* <http://rmarkdown.rstudio.com>
+
+--
+
+* Text and code in a single document (`.Rmd`).
+
+--
+
+* Several output formats (`.html`, `.pdf`, `.docx`, ...).
+
+--
+
+* R Markdown templates for journal submissions: <https://github.com/rstudio/rticles>.
+
+--
+
+* You can also write books, presentations, websites and blogs.
+
+---
+
+# Organising folders and files
+
+From the [Open Science Framework](http://help.osf.io/m/bestpractices/l/611391-organizing-files).
+
+* Separate <u>data</u> from <u>code/text</u>.
+
+* Separate <u>raw data</u> from <u>derived data</u>.
+
+* Treat raw data as <u>read-only</u>.
+
+* Use a <u>versioning system</u> (like `git` with GitHub).
+
+---
+
+# Summary
+
+* Use **RStudio**.
+
+* **Don't save `.Rdata`** and do not load it at start up.
+
+* Separate **code** from **data** (*raw* and *derived*).
+
+* Write **dynamic reports** with R Markdown (and avoid copy-paste).
+
+---
+
+# Extra: Research compendia with R packages
+
+* <https://github.com/ropensci/rrrpkg>
+
+* <https://www.r-bloggers.com/how-to-develop-good-r-packages-for-open-science/>
+
+* <http://r-pkgs.had.co.nz>
