@@ -16,7 +16,7 @@
 class: center, middle, inverse, title-slide
 
 # intRo: Data visualisation with R
-## 02 — R Basics
+## 01 — Introduction
 ### Stefano Coretta
 
 ---
@@ -26,343 +26,69 @@ class: center, middle, inverse, title-slide
 
 
 
-# R as a calculator
+class: inverse middle
 
-Write the following in the `Console`, then press `ENTER`.
+.f1[What is data?]
 
+---
 
-```r
-1 + 2
-```
+class: middle center
 
-```
-## [1] 3
-```
+![](../img/data-history.png)
+---
+
+background-image: url(../img/big-data-analysis-1024x576.jpg)
+background-size: cover
+
+---
+
+class: middle center
+
+![](../img/what-r-for.png)
+
+---
+
+class: middle center
+
+![](../img/inclusive-community.png)
+
+---
+
+# R vs RStudio
+
+![](../img/R_vs_RStudio_1.png)
+
+---
+
+# R vs RStudio
+
+.pull-left[
+.f2[R]
+
+- R is a **programming language**.
+
+- We use programming languages to **interact** with computers.
+
+- You **run commands** written in a console and the related task is executed.
+]
 
 --
 
-You did it! You run your first line of code!
+.pull-right[
+.f2[RStudio]
+
+- RStudio is an Integrated Development Environment or **IDE**.
+
+- It helps you using R more efficiently.
+
+- It has a graphical interface.
+]
 
 ---
 
-# R as a calculator
+# R vs RStudio
 
-Try some more operations...
-
-
-```r
-67 - 13
-```
-
-```
-## [1] 54
-```
-
-```r
-2 * 4
-```
-
-```
-## [1] 8
-```
-
-```r
-268 / 43
-```
-
-```
-## [1] 6.232558
-```
-
----
-
-# R as a calculator
-
-You can chain operations...
-
-
-```r
-6 + 4 - 1 + 2
-```
-
-```
-## [1] 11
-```
-
-```r
-4 * 2 + 3 * 2
-```
-
-```
-## [1] 14
-```
-
----
-
-# R as a calculator
-
-But watch out for your brackets!
-
-
-```r
-4 * 2 + 3 * 2
-```
-
-```
-## [1] 14
-```
-
-```r
-(4 * 2) + (3 * 2)
-```
-
-```
-## [1] 14
-```
-
-```r
-4 * (2 + 3) * 2
-```
-
-```
-## [1] 40
-```
-
----
-
-# Forget-me-not: variables
-
-Store a variable in the computer memory for later use.
-
-
-```r
-my_num &lt;- 156
-```
-
---
-
-You can just call it back when you need it!
-
-
-```r
-my_num
-```
-
-```
-## [1] 156
-```
-
----
-
-# Oh my vars!
-
-
-```r
-income &lt;- 1200
-
-expenses &lt;- 500
-
-income - expenses
-```
-
-```
-## [1] 700
-```
-
---
-
-You can go all the way with variables!
-
-
-```r
-savings &lt;- income - expenses
-```
-
-And check the value...
-
-
-```r
-savings
-```
-
-```
-## [1] 700
-```
-
----
-
-# Variables are... variable
-
-
-```r
-yo &lt;- 5
-
-yo + 3
-```
-
-```
-## [1] 8
-```
-
-```r
-yo &lt;- 3
-
-yo + 3
-```
-
-```
-## [1] 6
-```
-
----
-
-# Variables can hold more than one item
-
-
-```r
-one_i &lt;- 6
-
-two_i &lt;- c(6, 8)
-
-five_i &lt;- c(6, 8, 42)
-```
-
---
-
-Note the following are the same:
-
-
-```r
-one_i &lt;- 6
-
-one_ii &lt;- c(6)
-```
-
-
----
-
-# R can't function without... functions
-
-**Functions** are operations performed on one or more *arguments*.
-
-
-```r
-sum(3, 5)
-```
-
-```
-## [1] 8
-```
-
---
-
-And arguments can be vectors!
-
-
-```r
-my_nums &lt;- c(3, 5, 7)
-
-sum(my_nums)
-```
-
-```
-## [1] 15
-```
-
-```r
-mean(my_nums)
-```
-
-```
-## [1] 5
-```
-
----
-
-# Not just numbers
-
-Variables can store **strings**.
-
-
-```r
-name &lt;- "Stefano"
-surname &lt;- "Coretta"
-
-name
-```
-
-```
-## [1] "Stefano"
-```
-
----
-
-# Not just numbers
-
-And strings can be used as arguments in functions.
-
-
-```r
-cat("My name is", name, surname)
-```
-
-```
-## My name is Stefano Coretta
-```
-
---
-
-And you can of course reuse the same variable name to override the variable value.
-
-
-```r
-name &lt;- "Raj"
-
-cat("My name is", name)
-```
-
-```
-## My name is Raj
-```
-
----
-
-# The null and the infinite
-
-
-```r
-forgot &lt;- NA
-
-nothing &lt;- NULL
-
-everything &lt;- Inf
-```
-
-
----
-
-# Summary
-
-
-- R as a calculator
-
-  - Arithmetic operations.
-
-- Variable:
-  
-  - Numeric.
-  - String.
-
-- Function:
-  
-  - Function name (`sum()`, `mean()`, `cat()`).
-  - Arguments.
-
----
-
-class: middle center inverse
-
-.f1[TUTORIAL]
+![](../img/R_vs_RStudio_1.png)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

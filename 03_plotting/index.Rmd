@@ -13,28 +13,29 @@ output:
       countIncrementalSlides: false
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 library(tidyverse)
-theme_set(theme_minimal())
+theme_set(theme_minimal(base_size = 16))
+library(ggmosaic)
 library(intRo)
+library(ggrepel)
 data("social")
 data("endangered")
 data("harry_potter")
 data("df_ratios")
 df_ratios <- drop_na(df_ratios, student_ratio)
+data("fly")
+fly <- drop_na(fly)
 ```
 
-???
-
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
-
----
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
+```
 
 # Visualise data
 
+![](../img/data-viz.png)
 
 ---
 
@@ -44,13 +45,15 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
 
 - lattice.
 
-- ggplot2 (the Grammar of Graphics).
+- ggplot2.
+
+- more...
 
 ---
 
 # Base R plotting function
 
-```{r}
+```{r scatter, eval=FALSE}
 x <- 1:10
 y <- x^3
 
@@ -61,7 +64,30 @@ plot(x, y)
 
 # Base R plotting function
 
-```{r}
+
+```{r scatter-plot, echo=FALSE}
+x <- 1:10
+y <- x^3
+
+plot(x, y)
+```
+
+---
+
+# Base R plotting function
+
+```{r line, eval=FALSE}
+x <- seq(1, 10, by = 0.01)
+y <- x^3
+
+plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
+```
+
+---
+
+# Base R plotting function
+
+```{r line-plot, echo=FALSE}
 x <- seq(1, 10, by = 0.01)
 y <- x^3
 
@@ -72,13 +98,27 @@ plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
 
 # Packages to the rescue
 
-- The library.
+<br>
 
-- Packages contained in library.
+- The R **library** contains the installed packages.
 
-- Base R (set of packages).
+  - Base R.
 
-- Install extra packages with `install.packages("tidyverse")`.
+  - Extra packages.
+
+- Install extra packages with `install.packages()`.
+
+--
+
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Run this in the console:
+
+```r
+install.packages("fortunes")
+```
+
+]
 
 ---
 
@@ -86,19 +126,41 @@ plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
 
 To use a package installed in the library, you `attach` the package with `library()`.
 
+--
+
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Run this in the console:
+
+```{r fortunes}
+library(fortunes)
+```
+
+]
+
 ---
 
 # Packages to the rescue
 
-```{r}
-library(tidyverse)
+Now you can use the functions provided by the attached package
+
+--
+
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Run this in the console:
+
+```{r fortune}
+fortune()
 ```
+
+]
 
 ---
 
 # Do you sleep like a giraffe or a brown bat?
 
-```{r}
+```{r msleep, eval=FALSE}
 ggplot(
   data = msleep,
   mapping = aes(x = sleep_total, y = sleep_rem)
@@ -106,26 +168,68 @@ ggplot(
   geom_point()
 ```
 
+---
+
+# Do you sleep like a giraffe or a brown bat?
+
+```{r msleep-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(
+  data = msleep,
+  mapping = aes(x = sleep_total, y = sleep_rem)
+) +
+  geom_point()
+```
 
 ---
 
 # Do you sleep like a giraffe or a brown bat?
 
 
-```{r}
+```{r msleep-lab, eval=FALSE}
+library(ggrepel)
+
 ggplot(
   data = msleep,
   mapping = aes(x = sleep_total, y = sleep_rem, label = name)
 ) +
   geom_point() +
-  geom_label()
+  geom_label_repel()
+```
+
+---
+
+# Do you sleep like a giraffe or a brown bat?
+
+
+```{r msleep-lab-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(
+  data = msleep,
+  mapping = aes(x = sleep_total, y = sleep_rem, label = name)
+) +
+  geom_point() +
+  geom_label_repel()
 ```
 
 ---
 
 # Social media users 2008-2019
 
-```{r}
+```{r social, eval=FALSE}
+social %>%
+  filter(platform %in% c(
+    "Facebook", "Twitter", "TikTok", "Instagram", "YouTube"
+    )
+  ) %>%
+  ggplot(aes(year, users, colour = platform)) +
+  geom_line() +
+  geom_point()
+```
+
+---
+
+# Social media users 2008-2019
+
+```{r social-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
 social %>%
   filter(platform %in% c("Facebook", "Twitter", "TikTok", "Instagram", "YouTube")) %>%
   ggplot(aes(year, users, colour = platform)) +
@@ -137,39 +241,118 @@ social %>%
 
 # Language endangerment
 
-```{r}
+```{r endanger, eval=FALSE}
 endangered %>%
-  ggplot(aes(degree)) +
-  geom_bar()
+  ggplot(aes(status, fill = status)) +
+  geom_bar() +
+  scale_fill_brewer(palette = "Reds")
 ```
 
 ---
 
-# Hogwarts houses
+# Language endangerment
 
-```{r}
+```{r endanger-plot, echo=FALSE, fig.align='center'}
+endangered %>%
+  ggplot(aes(status, fill = status)) +
+  geom_bar() +
+  scale_fill_brewer(palette = "Reds") +
+  theme(legend.position = "none")
+```
+
+---
+
+# Hogwarts houses and astrological elements
+
+```{r hp, eval=FALSE}
 harry_potter %>%
-  ggplot(aes(house, fill = house)) +
-  geom_bar()
+  ggplot(aes(element, fill = house)) +
+  geom_bar(position = "dodge") +
+  scale_fill_manual(
+    values = c("#76040a", "#f29e02", "#0121a2", "#1d492c")
+  )
+```
+
+---
+
+# Hogwarts houses and astrological elements
+
+```{r hp-plot, echo=FALSE, fig.align='center'}
+harry_potter %>%
+  ggplot(aes(element, fill = house)) +
+  geom_bar(position = "dodge") +
+  scale_fill_manual(values = c("#76040a", "#f29e02", "#0121a2", "#1d492c")) +
+  theme(legend.position = "top")
 ```
 
 ---
 
 # Student/teacher ratio
 
-```{r}
-world_avg <- df_ratios %>%
-  summarize(avg = mean(student_ratio, na.rm = T)) %>%
-  pull(avg)
-
+```{r st-ratio, eval=FALSE}
 df_ratios %>%
-  mutate(region = fct_reorder(region, -student_ratio_region)) %>%
-  ggplot(aes(x = region, y = student_ratio, color = region)) +
-    geom_jitter(size = 2, alpha = 0.5, width = 0.2) +
-    coord_flip() +
+  mutate(
+    region = fct_reorder(region, -student_ratio_region)
+  ) %>%
+  ggplot(
+    aes(x = region, y = student_ratio, color = region)
+  ) +
+  geom_jitter(size = 4, alpha = 0.6, width = 0.2) +
+  coord_flip() +
   labs(
     y = "Student to teacher ratio",
     x = element_blank()
   ) +
   theme(legend.position = "none")
 ```
+
+---
+
+# Student/teacher ratio
+
+```{r st-ratio-plot, echo=FALSE, fig.align='center'}
+df_ratios %>%
+  mutate(
+    region = fct_reorder(region, -student_ratio_region)
+  ) %>%
+  ggplot(
+    aes(x = region, y = student_ratio, color = region)
+  ) +
+  geom_jitter(size = 4, alpha = 0.6, width = 0.2) +
+  coord_flip() +
+  labs(
+    y = "Student to teacher ratio",
+    x = element_blank()
+  ) +
+  theme(legend.position = "none")
+```
+
+---
+
+# Do you decline invitations?
+
+```{r decline, eval=FALSE}
+ggplot(data = fly) +
+  geom_mosaic(aes(x = product(rude_to_recline), fill = do_you_recline)) +
+  labs(x = "Is it rude to decline?", y = "Do you decline?") +
+  theme_mosaic() +
+  theme(legend.position = "none")
+```
+
+---
+
+# Do you decline invitations?
+
+```{r decline-plot, echo=FALSE, fig.align='center'}
+ggplot(data = fly) +
+  geom_mosaic(aes(x = product(rude_to_recline), fill = do_you_recline)) +
+  labs(x = "Is it rude to decline?", y = "Do you decline?") +
+  theme_mosaic() +
+  theme(legend.position = "none")
+```
+
+---
+
+class: middle center inverse
+
+.f1[TUTORIAL]

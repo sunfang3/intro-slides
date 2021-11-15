@@ -7,6 +7,9 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
   </head>
   <body>
     <textarea id="source">
@@ -19,18 +22,13 @@ class: center, middle, inverse, title-slide
 ---
 
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 
 
 
-???
-
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
-
----
 
 # Visualise data
 
+![](../img/data-viz.png)
 
 ---
 
@@ -40,7 +38,9 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
 
 - lattice.
 
-- ggplot2 (the Grammar of Graphics).
+- ggplot2.
+
+- more...
 
 ---
 
@@ -54,7 +54,12 @@ y &lt;- x^3
 plot(x, y)
 ```
 
-![](index_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+---
+
+# Base R plotting function
+
+
+![](index_files/figure-html/scatter-plot-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -68,19 +73,37 @@ y &lt;- x^3
 plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
 ```
 
-![](index_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+---
+
+# Base R plotting function
+
+![](index_files/figure-html/line-plot-1.png)&lt;!-- --&gt;
 
 ---
 
 # Packages to the rescue
 
-- The library.
+&lt;br&gt;
 
-- Packages contained in library.
+- The R **library** contains the installed packages.
 
-- Base R (set of packages).
+  - Base R.
 
-- Install extra packages with `install.packages("tidyverse")`.
+  - Extra packages.
+
+- Install extra packages with `install.packages()`.
+
+--
+
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Run this in the console:
+
+```r
+install.packages("fortunes")
+```
+
+]
 
 ---
 
@@ -88,14 +111,44 @@ plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
 
 To use a package installed in the library, you `attach` the package with `library()`.
 
+--
+
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Run this in the console:
+
+
+```r
+library(fortunes)
+```
+
+]
+
 ---
 
 # Packages to the rescue
 
+Now you can use the functions provided by the attached package
+
+--
+
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Run this in the console:
+
 
 ```r
-library(tidyverse)
+fortune()
 ```
+
+```
+## 
+## I think, therefore I R.
+##    -- William B. King (in his R tutorials)
+##       http://ww2.coastal.edu/kingw/statistics/R-tutorials/ (July 2010)
+```
+
+]
 
 ---
 
@@ -110,12 +163,11 @@ ggplot(
   geom_point()
 ```
 
-```
-## Warning: Removed 22 rows containing missing values (geom_point).
-```
+---
 
-![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+# Do you sleep like a giraffe or a brown bat?
 
+&lt;img src="index_files/figure-html/msleep-plot-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -124,23 +176,22 @@ ggplot(
 
 
 ```r
+library(ggrepel)
+
 ggplot(
   data = msleep,
   mapping = aes(x = sleep_total, y = sleep_rem, label = name)
 ) +
   geom_point() +
-  geom_label()
+  geom_label_repel()
 ```
 
-```
-## Warning: Removed 22 rows containing missing values (geom_point).
-```
+---
 
-```
-## Warning: Removed 22 rows containing missing values (geom_label).
-```
+# Do you sleep like a giraffe or a brown bat?
 
-![](index_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+&lt;img src="index_files/figure-html/msleep-lab-plot-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -149,13 +200,20 @@ ggplot(
 
 ```r
 social %&gt;%
-  filter(platform %in% c("Facebook", "Twitter", "TikTok", "Instagram", "YouTube")) %&gt;%
+  filter(platform %in% c(
+    "Facebook", "Twitter", "TikTok", "Instagram", "YouTube"
+    )
+  ) %&gt;%
   ggplot(aes(year, users, colour = platform)) +
   geom_line() +
   geom_point()
 ```
 
-![](index_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+---
+
+# Social media users 2008-2019
+
+&lt;img src="index_files/figure-html/social-plot-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -164,24 +222,36 @@ social %&gt;%
 
 ```r
 endangered %&gt;%
-  ggplot(aes(degree)) +
-  geom_bar()
+  ggplot(aes(status, fill = status)) +
+  geom_bar() +
+  scale_fill_brewer(palette = "Reds")
 ```
-
-![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
 
 ---
 
-# Hogwarts houses
+# Language endangerment
+
+&lt;img src="index_files/figure-html/endanger-plot-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Hogwarts houses and astrological elements
 
 
 ```r
 harry_potter %&gt;%
-  ggplot(aes(house, fill = house)) +
-  geom_bar()
+  ggplot(aes(element, fill = house)) +
+  geom_bar(position = "dodge") +
+  scale_fill_manual(
+    values = c("#76040a", "#f29e02", "#0121a2", "#1d492c")
+  )
 ```
 
-![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+---
+
+# Hogwarts houses and astrological elements
+
+&lt;img src="index_files/figure-html/hp-plot-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -189,15 +259,15 @@ harry_potter %&gt;%
 
 
 ```r
-world_avg &lt;- df_ratios %&gt;%
-  summarize(avg = mean(student_ratio, na.rm = T)) %&gt;%
-  pull(avg)
-
 df_ratios %&gt;%
-  mutate(region = fct_reorder(region, -student_ratio_region)) %&gt;%
-  ggplot(aes(x = region, y = student_ratio, color = region)) +
-    geom_jitter(size = 2, alpha = 0.5, width = 0.2) +
-    coord_flip() +
+  mutate(
+    region = fct_reorder(region, -student_ratio_region)
+  ) %&gt;%
+  ggplot(
+    aes(x = region, y = student_ratio, color = region)
+  ) +
+  geom_jitter(size = 4, alpha = 0.6, width = 0.2) +
+  coord_flip() +
   labs(
     y = "Student to teacher ratio",
     x = element_blank()
@@ -205,7 +275,36 @@ df_ratios %&gt;%
   theme(legend.position = "none")
 ```
 
-![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+---
+
+# Student/teacher ratio
+
+&lt;img src="index_files/figure-html/st-ratio-plot-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Do you decline invitations?
+
+
+```r
+ggplot(data = fly) +
+  geom_mosaic(aes(x = product(rude_to_recline), fill = do_you_recline)) +
+  labs(x = "Is it rude to decline?", y = "Do you decline?") +
+  theme_mosaic() +
+  theme(legend.position = "none")
+```
+
+---
+
+# Do you decline invitations?
+
+&lt;img src="index_files/figure-html/decline-plot-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: middle center inverse
+
+.f1[TUTORIAL]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

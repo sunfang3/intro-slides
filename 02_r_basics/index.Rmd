@@ -2,8 +2,6 @@
 title: "intRo: Data visualisation with R"
 subtitle: "02 — R Basics"
 author: "Stefano Coretta"
-# institute: "RStudio, PBC"
-# date: "2016/12/12 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -13,17 +11,13 @@ output:
       countIncrementalSlides: false
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
 
-???
-
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
-
----
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
+```
 
 # R as a calculator
 
@@ -245,3 +239,8 @@ everything <- Inf
   - Function name (`sum()`, `mean()`, `cat()`).
   - Arguments.
 
+---
+
+class: middle center inverse
+
+.f1[TUTORIAL]

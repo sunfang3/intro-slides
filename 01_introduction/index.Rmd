@@ -2,8 +2,6 @@
 title: "intRo: Data visualisation with R"
 subtitle: "01 — Introduction"
 author: "Stefano Coretta"
-# institute: "RStudio, PBC"
-# date: "2016/12/12 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -13,12 +11,74 @@ output:
       countIncrementalSlides: false
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
 
-???
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
+```
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+class: inverse middle
+
+.f1[What is data?]
+
+---
+
+class: middle center
+
+![](../img/data-history.png)
+---
+
+background-image: url(../img/big-data-analysis-1024x576.jpg)
+background-size: cover
+
+---
+
+class: middle center
+
+![](../img/what-r-for.png)
+
+---
+
+class: middle center
+
+![](../img/inclusive-community.png)
+
+---
+
+# R vs RStudio
+
+![](../img/R_vs_RStudio_1.png)
+
+---
+
+# R vs RStudio
+
+.pull-left[
+.f2[R]
+
+- R is a **programming language**.
+
+- We use programming languages to **interact** with computers.
+
+- You **run commands** written in a console and the related task is executed.
+]
+
+--
+
+.pull-right[
+.f2[RStudio]
+
+- RStudio is an Integrated Development Environment or **IDE**.
+
+- It helps you using R more efficiently.
+
+- It has a graphical interface.
+]
+
+---
+
+# R vs RStudio
+
+![](../img/R_vs_RStudio_1.png)
