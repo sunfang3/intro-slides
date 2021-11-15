@@ -177,7 +177,7 @@ ggplot(
 
 # Do you sleep like a giraffe or a brown bat?
 
-```{r msleep-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
+```{r msleep-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE, out.height="500px", dpi=300}
 ggplot(
   data = msleep,
   mapping = aes(x = sleep_total, y = sleep_rem)
@@ -206,7 +206,7 @@ ggplot(
 # Do you sleep like a giraffe or a brown bat?
 
 
-```{r msleep-lab-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
+```{r msleep-lab-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE, out.height="500px", dpi=300}
 ggplot(
   data = msleep,
   mapping = aes(x = sleep_total, y = sleep_rem, label = name)
@@ -234,7 +234,7 @@ social %>%
 
 # Social media users 2008-2019
 
-```{r social-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
+```{r social-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE, out.height="500px", dpi=300}
 social %>%
   filter(platform %in% c("Facebook", "Twitter", "TikTok", "Instagram", "YouTube")) %>%
   ggplot(aes(year, users, colour = platform)) +
@@ -257,7 +257,7 @@ endangered %>%
 
 # Language endangerment
 
-```{r endanger-plot, echo=FALSE, fig.align='center'}
+```{r endanger-plot, echo=FALSE, fig.align='center', out.height="500px", dpi=300}
 endangered %>%
   ggplot(aes(status, fill = status)) +
   geom_bar() +
@@ -282,7 +282,7 @@ harry_potter %>%
 
 # Hogwarts houses and astrological elements
 
-```{r hp-plot, echo=FALSE, fig.align='center'}
+```{r hp-plot, echo=FALSE, fig.align='center', out.height="500px", dpi=300}
 harry_potter %>%
   ggplot(aes(element, fill = house)) +
   geom_bar(position = "dodge") +
@@ -315,7 +315,7 @@ df_ratios %>%
 
 # Student/teacher ratio
 
-```{r st-ratio-plot, echo=FALSE, fig.align='center'}
+```{r st-ratio-plot, echo=FALSE, fig.align='center', out.height="500px", dpi=300}
 df_ratios %>%
   mutate(
     region = fct_reorder(region, -student_ratio_region)
@@ -348,7 +348,7 @@ ggplot(data = fly) +
 
 # Do you decline invitations?
 
-```{r decline-plot, echo=FALSE, fig.align='center'}
+```{r decline-plot, echo=FALSE, fig.align='center', out.height="500px", dpi=300}
 ggplot(data = fly) +
   geom_mosaic(aes(x = product(rude_to_recline), fill = do_you_recline)) +
   labs(x = "Is it rude to decline?", y = "Do you decline?") +
