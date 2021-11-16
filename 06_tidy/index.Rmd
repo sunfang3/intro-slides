@@ -1,0 +1,91 @@
+---
+title: "intRo: Data visualisation with R"
+subtitle: "06 — Tidy data"
+author: "Stefano Coretta"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - ../ipa-fonts.css
+      - ../custom.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "../macros.js"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
+```
+
+background-image: url(../img/tidydata_1.jpg)
+background-size: contain
+
+???
+
+https://github.com/allisonhorst/stats-illustrations
+
+---
+
+background-image: url(../img/tidydata_2.jpg)
+background-size: contain
+
+---
+
+background-image: url(../img/tidydata_3.jpg)
+background-size: contain
+
+---
+
+background-image: url(../img/tidydata_4.jpg)
+background-size: contain
+
+---
+
+background-image: url(../img/tidydata_5.jpg)
+background-size: contain
+
+---
+
+background-image: url(../img/original-dfs-tidy.png)
+background-size: contain
+
+???
+
+https://github.com/gadenbuie/tidyexplain/blob/main/images/static/png/original-dfs-tidy.png
+
+---
+
+background-image: url(../img/pivot.png)
+background-size: contain
+
+???
+
+https://github.com/gadenbuie/tidyexplain/blob/main/images/static/png/original-dfs-tidy.png
+
+---
+
+background-image: url(../img/pivot-widelong.png)
+background-size: contain
+
+???
+
+https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf
+
+---
+
+background-image: url(../img/sep-unite.png)
+background-size: contain
+
+???
+
+https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf
+
+---
+
+class: middle center inverse
+
+.f1[TUTORIAL]
