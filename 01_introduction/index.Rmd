@@ -24,6 +24,57 @@ options(htmltools.dir.version = FALSE)
 xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
 ```
 
+background-image: url(../img/mia-anderson-xzE4-0gSYuo-unsplash.jpg)
+background-size: cover
+
+.pull-right.f1[**Welcome!**]
+
+
+
+???
+
+Photo by <a href="https://unsplash.com/@miaanderson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mia Anderson</a> on <a href="https://unsplash.com/s/photos/happy-dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+---
+
+# Aknowledgements
+
+<br>
+
+.f3[
+* Billie-Gina Thomason (Liverpool)
+
+* Jessica Iubini-Hampton (Liverpool)
+
+* *Engage @ Liverpool* and *Methods North West*
+
+* University of Edinburgh
+
+]
+
+---
+
+# Practical announcements
+
+<br>
+
+- Please, turn your video and microphone off.
+
+- Today's and tomorrow's sessions will be recorded.
+
+- Questions on Slido (<slido.com>).
+
+- Friday's session optional. Hands-on with your own data or provided datasets.
+
+---
+
+background-image: url(../img/karsten-winegeart-5PVXkqt2s9k-unsplash.jpg)
+background-size: cover
+
+# Are you ready?
+
+---
+
 class: inverse middle
 
 .f1[What is data?]
