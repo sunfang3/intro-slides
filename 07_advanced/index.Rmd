@@ -1,0 +1,110 @@
+---
+title: "intRo: Data visualisation with R"
+subtitle: "07 — Advanced skills"
+author: "Stefano Coretta"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - ../ipa-fonts.css
+      - ../custom.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "../macros.js"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
+```
+
+class: middle center inverse
+
+.f1[TUTORIAL]
+
+---
+
+# Resources
+
+<br>
+
+.f3[
+* [intRo](https://intro-rstats.github.io) website.
+
+* [intRo](https://intro-rstats.github.io/intRo/) R package.
+
+* intRo [presentation slides](https://intro-rstats.github.io/intro-slides/).
+
+]
+
+---
+
+# Resources
+<br>
+
+.f3[
+
+* [R for Data Science](https://r4ds.had.co.nz).
+
+* [Exploratory data analysis with R](https://bookdown.org/rdpeng/exdata/).
+
+* The [tidyverse website](https://www.tidyverse.org).
+
+* [RStudio Education](https://education.rstudio.com).
+
+* [Rmarkdown: The definite guide](https://bookdown.org/yihui/rmarkdown/).
+]
+
+---
+
+# Resources
+
+<br>
+
+.f3[
+* [Geocomputation with R](https://bookdown.org/robinlovelace/geocompr/).
+
+* [sf](https://r-spatial.github.io/sf/) R package for GIS and maps.
+
+* [Plot likert](http://rnotr.com/likert/ggplot/barometer/likert-plots/) scales with ggplot2.
+
+* Alluvial plots with [ggalluvial](https://corybrunson.github.io/ggalluvial/).
+
+* Animate your plots with [gganimate](https://gganimate.com/articles/gganimate.html).
+
+* Make interactive plots with [Plotly.R](https://plotly.com/r/getting-started/).
+
+* Create interactive web apps and dashboards with [Shiny](https://shiny.rstudio.com).
+
+* Write [papers](https://pkgs.rstudio.com/rticles/), [books](https://bookdown.org), [websites](https://pkgs.rstudio.com/blogdown/), [presentations](https://github.com/yihui/xaringan).
+]
+
+---
+
+# Hands-on session
+
+<br>
+
+.f2[Friday Nov 19]
+
+<br>
+
+* .f3[Early session] (09:00 - 10:30 GMT)
+
+* .f3[Late session] (19:00 - 20:30 GMT)
+
+<br>
+
+.f2[Pick one!]
+
+---
+
+background-image: url(../img/howie-r-CjI_2QX7hvU-unsplash.jpg)
+background-size: contain
+
+???
+
+Photo by <a href="https://unsplash.com/@howier?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Howie R</a> on <a href="https://unsplash.com/s/photos/thanks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
