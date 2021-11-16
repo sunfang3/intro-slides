@@ -138,6 +138,15 @@ From the [Open Science Framework](http://help.osf.io/m/bestpractices/l/611391-or
 
 ---
 
+background-image: url(../img/nick-fewings-2qXNT7LMfpY-unsplash.jpg)
+background-size: cover
+
+???
+
+Photo by <a href="https://unsplash.com/@jannerboy62?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Fewings</a> on <a href="https://unsplash.com/s/photos/mouse?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+---
+
 # Extra: Research compendia with R packages
 
 * <https://github.com/ropensci/rrrpkg>
