@@ -1,7 +1,7 @@
 ---
-title: "intRo: Data visualisation with R"
-subtitle: "03 — Plot with ggplot2"
-author: "Stefano Coretta"
+title: "使用R进行数据可视化"
+subtitle: "03 — 用ggplot2绘图"
+author: "孙方"
 # institute: "RStudio, PBC"
 # date: "2016/12/12 (updated: `r Sys.Date()`)"
 output:
@@ -22,7 +22,7 @@ output:
 options(htmltools.dir.version = FALSE)
 library(tidyverse)
 theme_set(theme_minimal(base_size = 16))
-library(ggmosaic)
+library()
 library(intRo)
 library(ggrepel)
 data("social")
@@ -41,22 +41,21 @@ xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
 # Visualise data
 
 ![](../img/data-viz.png)
+---
+
+# 图形系统
+
+- 基础 R。
+
+- lattice。
+
+- ggplot2。
+
+- 更多...
 
 ---
 
-# Graphic systems
-
-- Base R.
-
-- lattice.
-
-- ggplot2.
-
-- more...
-
----
-
-# Base R plotting function
+# 基础 R 绘图函数
 
 ```{r scatter, eval=FALSE}
 x <- 1:10
@@ -67,7 +66,7 @@ plot(x, y)
 
 ---
 
-# Base R plotting function
+# 基础 R 绘图函数
 
 
 ```{r scatter-plot, echo=FALSE}
@@ -79,7 +78,7 @@ plot(x, y)
 
 ---
 
-# Base R plotting function
+# 基础 R 绘图函数
 
 ```{r line, eval=FALSE}
 x <- seq(1, 10, by = 0.01)
@@ -90,7 +89,7 @@ plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
 
 ---
 
-# Base R plotting function
+# 基础 R 绘图函数
 
 ```{r line-plot, echo=FALSE}
 x <- seq(1, 10, by = 0.01)
@@ -101,23 +100,23 @@ plot(x, y, type = "l", col = "purple", lwd = 3, lty = "dashed")
 
 ---
 
-# Packages to the rescue
+# 包来救援
 
 <br>
 
-- The R **library** contains the installed packages.
+- R **库**包含已安装的包。
 
-  - Base R.
+  - 基础 R。
 
-  - Extra packages.
+  - 额外的包。
 
-- Install extra packages with `install.packages()`.
+- 使用 `install.packages()` 安装额外的包。
 
 --
 
 .bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
 
-Run this in the console:
+在控制台中运行此命令：
 
 ```r
 install.packages("fortunes")
@@ -127,15 +126,15 @@ install.packages("fortunes")
 
 ---
 
-# Packages to the rescue
+# 包来救援
 
-To use a package installed in the library, you `attach` the package with `library()`.
+要使用库中安装的包，你可以通过 `library()` 来加载包。
 
 --
 
 .bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
 
-Run this in the console:
+在控制台中运行此命令：
 
 ```{r fortunes}
 library(fortunes)
@@ -145,15 +144,15 @@ library(fortunes)
 
 ---
 
-# Packages to the rescue
+# 包来救援
 
-Now you can use the functions provided by the attached package
+现在你可以使用附加包提供的函数
 
 --
 
 .bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
 
-Run this in the console:
+在控制台中运行此命令：
 
 ```{r fortune}
 fortune()
@@ -163,7 +162,7 @@ fortune()
 
 ---
 
-# Do you sleep like a giraffe or a brown bat?
+# 你的睡眠像长颈鹿还是棕色蝙蝠？
 
 ```{r msleep, eval=FALSE}
 ggplot(
@@ -175,7 +174,7 @@ ggplot(
 
 ---
 
-# Do you sleep like a giraffe or a brown bat?
+# 你的睡眠像长颈鹿还是棕色蝙蝠？
 
 ```{r msleep-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE, out.height="500px", dpi=300}
 ggplot(
@@ -187,7 +186,7 @@ ggplot(
 
 ---
 
-# Do you sleep like a giraffe or a brown bat?
+# 你的睡眠像长颈鹿还是棕色蝙蝠？
 
 
 ```{r msleep-lab, eval=FALSE}
@@ -203,7 +202,7 @@ ggplot(
 
 ---
 
-# Do you sleep like a giraffe or a brown bat?
+# 你的睡眠像长颈鹿还是棕色蝙蝠？
 
 
 ```{r msleep-lab-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE, out.height="500px", dpi=300}
@@ -217,7 +216,7 @@ ggplot(
 
 ---
 
-# Social media users 2008-2019
+# 2008-2019年社交媒体用户
 
 ```{r social, eval=FALSE}
 social %>%
@@ -232,7 +231,7 @@ social %>%
 
 ---
 
-# Social media users 2008-2019
+# 2008-2019年社交媒体用户
 
 ```{r social-plot, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE, out.height="500px", dpi=300}
 social %>%
@@ -244,7 +243,7 @@ social %>%
 
 ---
 
-# Language endangerment
+# 语言濒危
 
 ```{r endanger, eval=FALSE}
 endangered %>%
@@ -255,7 +254,7 @@ endangered %>%
 
 ---
 
-# Language endangerment
+# 语言濒危
 
 ```{r endanger-plot, echo=FALSE, fig.align='center', out.height="500px", dpi=300}
 endangered %>%
@@ -267,7 +266,7 @@ endangered %>%
 
 ---
 
-# Hogwarts houses and astrological elements
+# 霍格沃茨学院与占星元素
 
 ```{r hp, eval=FALSE}
 harry_potter %>%
@@ -280,7 +279,7 @@ harry_potter %>%
 
 ---
 
-# Hogwarts houses and astrological elements
+# 霍格沃茨学院与占星元素
 
 ```{r hp-plot, echo=FALSE, fig.align='center', out.height="500px", dpi=300}
 harry_potter %>%
@@ -292,7 +291,7 @@ harry_potter %>%
 
 ---
 
-# Student/teacher ratio
+# 学生/教师比例
 
 ```{r st-ratio, eval=FALSE}
 df_ratios %>%
@@ -313,7 +312,7 @@ df_ratios %>%
 
 ---
 
-# Student/teacher ratio
+# 学生/教师比例
 
 ```{r st-ratio-plot, echo=FALSE, fig.align='center', out.height="500px", dpi=300}
 df_ratios %>%
@@ -334,7 +333,7 @@ df_ratios %>%
 
 ---
 
-# Do you decline invitations?
+# 你会拒绝邀请吗？
 
 ```{r decline, eval=FALSE}
 ggplot(data = fly) +
@@ -346,7 +345,8 @@ ggplot(data = fly) +
 
 ---
 
-# Do you decline invitations?
+# 你会拒绝邀请吗？
+
 
 ```{r decline-plot, echo=FALSE, fig.align='center', out.height="500px", dpi=300}
 ggplot(data = fly) +

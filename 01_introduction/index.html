@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>intRo: Data visualisation with R</title>
+    <title>使用R进行数据可视化</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Stefano Coretta" />
+    <meta name="author" content="孙方" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
@@ -16,9 +16,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# intRo: Data visualisation with R
-## 01 — Introduction
-### Stefano Coretta
+.title[
+# 使用R进行数据可视化
+]
+.subtitle[
+## 01 — 介绍
+]
+.author[
+### 孙方
+]
 
 ---
 
@@ -33,48 +39,18 @@ background-size: cover
 .pull-right.f1[**Welcome!**]
 
 
-
 ???
 
 Photo by &lt;a href="https://unsplash.com/@miaanderson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"&gt;Mia Anderson&lt;/a&gt; on &lt;a href="https://unsplash.com/s/photos/happy-dog?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"&gt;Unsplash&lt;/a&gt;
 
----
 
-# Aknowledgements
-
-&lt;br&gt;
-
-.f3[
-* Billie-Gina Thomason (Liverpool)
-
-* Jessica Iubini-Hampton (Liverpool)
-
-* *Engage @ Liverpool* and *Methods North West*
-
-* University of Edinburgh
-
-]
-
----
-
-# Practical announcements
-
-&lt;br&gt;
-
-- Please, turn your video and microphone off.
-
-- Today's and tomorrow's sessions will be recorded.
-
-- Questions on Slido (&lt;slido.com&gt;).
-
-- Friday's session optional. Hands-on with your own data or provided datasets.
 
 ---
 
 background-image: url(../img/karsten-winegeart-5PVXkqt2s9k-unsplash.jpg)
 background-size: cover
 
-# Are you ready?
+# 准备好了么
 
 ---
 
@@ -117,11 +93,11 @@ class: middle center
 .pull-left[
 .f2[R]
 
-- R is a **programming language**.
+- R 是一门 **编程语言**.
 
-- We use programming languages to **interact** with computers.
+- 我们使用编程语言与计算机 **交互** .
 
-- You **run commands** written in a console and the related task is executed.
+- 在窗口中**运行命令** 任务得到执行
 ]
 
 --
@@ -129,11 +105,11 @@ class: middle center
 .pull-right[
 .f2[RStudio]
 
-- RStudio is an Integrated Development Environment or **IDE**.
+- RStudio 是一个集成开发环境 **IDE**.
 
-- It helps you using R more efficiently.
+- 它帮助你更好的运用R语言.
 
-- It has a graphical interface.
+- 它有GUI界面.
 ]
 
 ---
@@ -189,6 +165,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

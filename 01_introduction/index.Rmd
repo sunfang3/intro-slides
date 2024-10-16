@@ -1,7 +1,7 @@
 ---
-title: "intRo: Data visualisation with R"
-subtitle: "01 — Introduction"
-author: "Stefano Coretta"
+title: "使用R进行数据可视化"
+subtitle: "01 — 介绍"
+author: "孙方"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -30,48 +30,18 @@ background-size: cover
 .pull-right.f1[**Welcome!**]
 
 
-
 ???
 
 Photo by <a href="https://unsplash.com/@miaanderson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mia Anderson</a> on <a href="https://unsplash.com/s/photos/happy-dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
----
 
-# Aknowledgements
-
-<br>
-
-.f3[
-* Billie-Gina Thomason (Liverpool)
-
-* Jessica Iubini-Hampton (Liverpool)
-
-* *Engage @ Liverpool* and *Methods North West*
-
-* University of Edinburgh
-
-]
-
----
-
-# Practical announcements
-
-<br>
-
-- Please, turn your video and microphone off.
-
-- Today's and tomorrow's sessions will be recorded.
-
-- Questions on Slido (<slido.com>).
-
-- Friday's session optional. Hands-on with your own data or provided datasets.
 
 ---
 
 background-image: url(../img/karsten-winegeart-5PVXkqt2s9k-unsplash.jpg)
 background-size: cover
 
-# Are you ready?
+# 准备好了么
 
 ---
 
@@ -114,11 +84,11 @@ class: middle center
 .pull-left[
 .f2[R]
 
-- R is a **programming language**.
+- R 是一门 **编程语言**.
 
-- We use programming languages to **interact** with computers.
+- 我们使用编程语言与计算机 **交互** .
 
-- You **run commands** written in a console and the related task is executed.
+- 在窗口中**运行命令** 任务得到执行
 ]
 
 --
@@ -126,11 +96,11 @@ class: middle center
 .pull-right[
 .f2[RStudio]
 
-- RStudio is an Integrated Development Environment or **IDE**.
+- RStudio 是一个集成开发环境 **IDE**.
 
-- It helps you using R more efficiently.
+- 它帮助你更好的运用R语言.
 
-- It has a graphical interface.
+- 它有GUI界面.
 ]
 
 ---

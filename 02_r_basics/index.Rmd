@@ -1,7 +1,7 @@
 ---
-title: "intRo: Data visualisation with R"
-subtitle: "02 — R Basics"
-author: "Stefano Coretta"
+title: "使用R进行数据可视化"
+subtitle: "02 — R基础"
+author: "孙方"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -23,10 +23,9 @@ options(htmltools.dir.version = FALSE)
 ```{r xaringanExtra, echo=FALSE}
 xaringanExtra::use_xaringan_extra(c("panelset", "tachyons"))
 ```
+# R 作为计算器
 
-# R as a calculator
-
-Write the following in the `Console`, then press `ENTER`.
+在 `Console` 中输入以下内容，然后按 `ENTER` 键。
 
 ```{r}
 1 + 2
@@ -34,13 +33,13 @@ Write the following in the `Console`, then press `ENTER`.
 
 --
 
-You did it! You run your first line of code!
+你做到了！你运行了你的第一行代码！
 
 ---
 
-# R as a calculator
+# R 作为计算器
 
-Try some more operations...
+尝试一些更多的操作...
 
 ```{r}
 67 - 13
@@ -53,9 +52,9 @@ Try some more operations...
 
 ---
 
-# R as a calculator
+# R 作为计算器
 
-You can chain operations...
+你可以将操作串联起来...
 
 ```{r}
 6 + 4 - 1 + 2
@@ -65,9 +64,9 @@ You can chain operations...
 
 ---
 
-# R as a calculator
+# R 作为计算器
 
-But watch out for your brackets!
+但是要小心你的括号！
 
 ```{r}
 4 * 2 + 3 * 2
@@ -79,9 +78,9 @@ But watch out for your brackets!
 
 ---
 
-# Forget-me-not: variables
+# 勿忘我：变量
 
-Store a variable in the computer memory for later use.
+将一个变量存储在计算机内存中以备后用。
 
 ```{r}
 my_num <- 156
@@ -89,7 +88,7 @@ my_num <- 156
 
 --
 
-You can just call it back when you need it!
+当你需要它时，你只需调用它！
 
 ```{r}
 my_num
@@ -97,7 +96,7 @@ my_num
 
 ---
 
-# Oh my vars!
+# 我的变量！
 
 ```{r}
 income <- 1200
@@ -109,13 +108,13 @@ income - expenses
 
 --
 
-You can go all the way with variables!
+你可以完全使用变量！
 
 ```{r}
 savings <- income - expenses
 ```
 
-And check the value...
+并检查值...
 
 ```{r}
 savings
@@ -123,7 +122,7 @@ savings
 
 ---
 
-# Variables are... variable
+# 变量是...可变的
 
 ```{r}
 yo <- 5
@@ -137,7 +136,7 @@ yo + 3
 
 ---
 
-# Variables can hold more than one item
+# 变量可以指向多个东西
 
 ```{r}
 one_i <- 6
@@ -149,7 +148,7 @@ five_i <- c(6, 8, 42)
 
 --
 
-Note the following are the same:
+请注意，以下两者是相同的：
 
 ```{r}
 one_i <- 6
@@ -160,9 +159,9 @@ one_ii <- c(6)
 
 ---
 
-# R can't function without... functions
+# R 离不开...函数
 
-**Functions** are operations performed on one or more *arguments*.
+**函数**是对一个或多个 *参数* 执行的操作。
 
 ```{r}
 sum(3, 5)
@@ -170,7 +169,7 @@ sum(3, 5)
 
 --
 
-And arguments can be vectors!
+参数可以是向量！
 
 ```{r}
 my_nums <- c(3, 5, 7)
@@ -181,9 +180,9 @@ mean(my_nums)
 
 ---
 
-# Not just numbers
+# 不仅仅是数字
 
-Variables can store **strings**.
+变量可以存储 **字符串**。
 
 ```{r}
 name <- "Stefano"
@@ -194,9 +193,9 @@ name
 
 ---
 
-# Not just numbers
+# 不仅仅是数字
 
-And strings can be used as arguments in functions.
+字符串也可以用作函数的参数。
 
 ```{r}
 cat("My name is", name, surname)
@@ -204,7 +203,7 @@ cat("My name is", name, surname)
 
 --
 
-And you can of course reuse the same variable name to override the variable value.
+当然，你可以重用相同的变量名来覆盖变量值。
 
 ```{r}
 name <- "Raj"
@@ -214,7 +213,7 @@ cat("My name is", name)
 
 ---
 
-# The null and the infinite
+# 空值和无穷大
 
 ```{r}
 forgot <- NA
@@ -227,22 +226,23 @@ everything <- Inf
 
 ---
 
-# Summary
+# 总结
 
 
-- R as a calculator
+- R 作为计算器
 
-  - Arithmetic operations.
+  - 算术操作。
 
-- Variable:
+- 变量：
   
-  - Numeric.
-  - String.
+  - 数值。
+  - 字符串。
 
-- Function:
+- 函数：
   
-  - Function name (`sum()`, `mean()`, `cat()`).
-  - Arguments.
+  - 函数名（`sum()`, `mean()`, `cat()`）。
+  - 参数。
+
 
 ---
 
